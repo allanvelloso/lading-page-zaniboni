@@ -1,0 +1,116 @@
+/* Contact */
+.contact {
+    padding: 6rem 0;
+    background: #1a365d;
+    color: #ffffff;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    color: #cbd5e0;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    height: 40px;
+    background: var(--cor-secundaria);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item h4 {
+    color: var(--cor-secundaria);
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #ffffff;
+}
+
+.contact-form {
+    background: #fdfdfd;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--cor-secundaria);
+    color: #1a365d;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 168, 168, 0.3);
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #000000;
+    margin-top: 1rem;
+} 

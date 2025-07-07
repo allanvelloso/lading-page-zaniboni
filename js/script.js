@@ -154,68 +154,17 @@ window.addEventListener('scroll', function() {
 });
 
 // Smooth reveal animation for sections
-const revealSections = document.querySelectorAll('section');
+const revealElements = document.querySelectorAll('.area-card, .testimonial-card, .feature, section');
 const revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.15 });
 
-revealSections.forEach(section => {
-    revealObserver.observe(section);
+revealElements.forEach(el => {
+    revealObserver.observe(el);
 });
-
-// Add CSS for reveal animation
-const style = document.createElement('style');
-style.textContent = `
-    section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    section.revealed {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .hero {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-    
-    @media (max-width: 768px) {
-        .nav-menu {
-            position: fixed;
-            left: -100%;
-            top: 70px;
-            flex-direction: column;
-            background-color: rgba(26, 54, 93, 0.98);
-            width: 100%;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-            padding: 2rem 0;
-        }
-        
-        .nav-menu.active {
-            left: 0;
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-    }
-`;
-document.head.appendChild(style);
 

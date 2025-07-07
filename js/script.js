@@ -91,8 +91,7 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('revealed');
         }
     });
 }, observerOptions);
@@ -100,11 +99,7 @@ const observer = new IntersectionObserver(function(entries) {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.area-card, .testimonial-card, .feature');
-    
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
 });
@@ -156,11 +151,6 @@ window.addEventListener('scroll', function() {
         const rate = scrolled * -0.5;
         hero.style.transform = `translateY(${rate}px)`;
     }
-});
-
-// Add loading animation
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
 });
 
 // Smooth reveal animation for sections

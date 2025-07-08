@@ -8,6 +8,27 @@
         display: none;
     }
     
+    .hamburger.active + .nav-menu,
+    .nav-menu.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100vw;
+        background: rgba(43, 58, 92, 0.98);
+        z-index: 1050;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem 0 2rem 0;
+        box-shadow: 0 8px 32px rgba(43,58,92,0.15);
+        animation: fadeInMenu 0.2s;
+    }
+    @keyframes fadeInMenu {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
     .cta-button {
         display: none;
     }

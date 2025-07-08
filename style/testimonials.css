@@ -2,12 +2,17 @@
 .testimonials {
     padding: 6rem 0;
     background: #f7fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    justify-content: center;
 }
 
 .testimonial-card {
@@ -16,6 +21,7 @@
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin: 0 auto;
 }
 
 .testimonial-card:hover {
